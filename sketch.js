@@ -19,8 +19,7 @@ var rabbit;
 var button;
 var bunny;
 
-function preload()
-{
+function preload(){
   bg_img = loadImage('background.png');
   food = loadImage('melon.png');
   rabbit = loadImage('Rabbit-01.png');;
@@ -42,7 +41,6 @@ function setup() {
   rope = new Rope(7,{x:245,y:30});
   ground = new Ground(200,690,600,20);
 
-
   bunny = createSprite(230,620,100,100);
   bunny.addImage(rabbit);
   bunny.scale = 0.2;
@@ -54,12 +52,10 @@ function setup() {
 
   rectMode(CENTER);
   ellipseMode(RADIUS);
-  imageMode(CENTER);
-  
+  imageMode(CENTER);  
 }
 
-function draw() 
-{
+function draw() {
   background(51);
   image(bg_img,width/2,height/2,490,690);
 
@@ -68,12 +64,10 @@ function draw()
   rope.show();
   Engine.update(engine);
   ground.show();
-
-   drawSprites();
+  drawSprites();
 }
 
-function drop()
-{
+function drop(){
   rope.break();
   fruit_con.dettach();
   fruit_con = null; 
